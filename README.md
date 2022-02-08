@@ -13,3 +13,4 @@ user = <mailbox-user>
 pass = <password>
 sender = <alert-adress>
 ```
+

@@ -15,6 +15,7 @@ sender = <alert-adress>
 
 [zabbix]
 server = <zabbix-server>
+port = <port> # 10051 by default
 user = <zabbix-user>
 pass = <password>
 ```

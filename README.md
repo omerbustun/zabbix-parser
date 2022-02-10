@@ -12,5 +12,10 @@ port = <imap-port>
 user = <mailbox-user>
 pass = <password>
 sender = <alert-adress>
+
+[zabbix]
+server = <zabbix-server>
+user = <zabbix-user>
+pass = <password>
 ```
 

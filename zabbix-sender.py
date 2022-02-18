@@ -1,16 +1,33 @@
+#!/usr/bin/python
 import configparser
-from pyzabbix import ZabbixSender, ZabbixAPI    
+import logging
+import sys
+from pyzabbix import ZabbixMetric, ZabbixSender
+
+logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 # Giriş bilgilerini yapılandırma dosyasından oku
 config   = configparser.ConfigParser()
 config.read('config.txt')
 zabbix_server   = config.get('zabbix', 'server')
 zabbix_port     = config.get('zabbix', 'port')
-zabbix_user     = config.get('zabbix', 'user')
-zabbix_password = config.get('zabbix', 'pass')
 
-# Zabbix sunucusuyla bir oturum oluştur
-zsend = ZabbixSender(zabbix_server = zabbix_server, zabbix_port = zabbix_port, use_config = False)
+# Argüman kontrolü
+if len(sys.argv)<3:
+  print("KULLANIM: hostId key value")
+  print("ORNEK: centos test[cpu_usage] 30")
+  sys.exit(1)
 
+# Argümanlardan değişkenleri al
+host_id = sys.argv[1]
+key = sys.argv[2]
+value = sys.argv[3]
 
-zsend.send('ZabbixSender test')
+# Paketi Zabbix trapper'a gönderilmek üzere hazırla
+packet = [ZabbixMetric(host_id, key, value)]
+
+# Paketi gönder
+result = ZabbixSender(zabbix_server, zabbix_port, use_config=None).send(packet)
+
+# Sonucu yazdır
+print(result)

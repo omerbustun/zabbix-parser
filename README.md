@@ -1,3 +1,6 @@
+![GitHub last commit](https://img.shields.io/github/last-commit/omerbustun/zabbix-parser?logo=Github)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/omerbustun/zabbix-parser?logo=Github)
+![GitHub Repo stars](https://img.shields.io/github/stars/omerbustun/zabbix-parser?style=social)
 # zabbix-parser
 Tool for parsing and piping e-mail alerts to Zabbix.
 

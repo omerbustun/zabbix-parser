@@ -27,7 +27,7 @@ value = sys.argv[3]
 packet = [ZabbixMetric(host_id, key, value)]
 
 # Paketi gönder
-result = ZabbixSender(zabbix_server, zabbix_port, use_config=None).send(packet)
+result = ZabbixSender(zabbix_server, int(zabbix_port), use_config=None).send(packet)
 
 # Sonucu yazdır
 print(result)

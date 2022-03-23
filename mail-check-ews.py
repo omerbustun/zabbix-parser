@@ -4,12 +4,9 @@ import configparser
 config   = configparser.ConfigParser()
 config.read('config.txt')
 server   = config.get('mail-ews', 'server')
-port     = config.get('mail-ews', 'port')
 username = config.get('mail-ews', 'user')
 password = config.get('mail-ews', 'pass')
 account  = config.get('mail-ews', 'account')
-sender   = config.get('mail-ews', 'sender')
-
 
 cred = Credentials(username=username,password=password)
 conf = Configuration(server=server, credentials=cred)

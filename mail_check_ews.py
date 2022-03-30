@@ -13,8 +13,10 @@ conf = Configuration(server=server, credentials=cred)
 account = Account(account, credentials=cred, config=conf)
 
 i = 1
-for item in account.inbox.filter(is_read=False, subject__contains='HATA'):
-    print('\n')
-    print(i, item.subject, item.datetime_received)
-    print('\n')
-    i = i + 1
+for item in account.inbox.filter(is_read=False):
+    #print('\n')
+    #print(i, item.subject, item.datetime_received)
+    #print('\n')
+    #i = i + 1
+    if item.subject.__contains__('HATA'):
+        print(item.subject)

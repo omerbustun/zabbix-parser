@@ -1,0 +1,14 @@
+email:
+  protocol: IMAP  # Change this to EWS when using Exchange Web Services
+  server: imap.example.com  # For EWS, this might be an endpoint URL
+  port: 993  # Default IMAP port; EWS might use a different port or endpoint
+  username: user@example.com
+  password: password123
+  # Add other settings specific to EWS, if needed:
+  # version: Exchange2010  # or another version
+  
+zabbix:
+  server: zabbix.example.com
+  port: 10051
+  host: host_name
+  key: item_key

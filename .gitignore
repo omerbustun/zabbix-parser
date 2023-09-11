@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # omerbustun
-*.txt
+config.txt
